@@ -1,0 +1,77 @@
+﻿
+<h7>Please input all required fields</h7>
+
+<br/>
+<br/>
+
+    <div class="row">
+    <div class="col">
+        <label for="descendFrom">Descned From</label>
+        <div class="col-sm-1">
+            <Input type="text" id="descendFrom" value="@descendFrom"/>
+        </div>
+        
+    </div>
+
+    <br />
+
+    <div class="col">
+        <label>Enter Descend To</label>
+        <div class="col-sm-1">
+            <input type="text" id="descnedTo" value="@descendTo" />
+        </div>
+        
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<div class="row">
+    <div class="col">
+        <label for="descendSpeed">Descned Speed</label>
+        <div class="col-sm-1">
+            <Input type="text" id="descendSpeed" value="@descendSpeed"/>
+        </div>
+        
+    </div>
+
+    <br />
+
+    <div class="col">
+        <label for="descendAngle">Descend Angle</label>
+        <div class="col-sm-1">
+            <input type="text" id="descnedTo" value="@descendAngle"/>
+        </div>
+        
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<div class="row">
+    <div class="col">
+        <label for="distanceTravled">Descend Travled</label>
+        <div class="col-sm-1">
+            <Input type="text" id="descendSpeed" value="@descendSpeed"/>
+        </div>
+       
+    </div>
+</div>
+
+
+
+
+@code {
+
+    [Parameter]
+    public string? ActionType { get; set; }
+
+    private string? descendFrom { get; set; } 
+    private string? descendTo { get; set; }
+    private string? descendSpeed { get; set; }
+    private string? descendAngle { get; set; }
+    private string? descendTravled { get; set; }
+    
+}
