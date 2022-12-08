@@ -1,77 +1,153 @@
-﻿
-<h7>Please input all required fields</h7>
+﻿<h7>Please input all required fields</h7>
 
-<br/>
-<br/>
+
+<br />
+<br />
+
+
+@if (ActionType == "disable1")
+{
+    @test
+    <div class="row">
+        <div class="col">
+            <label id="labDescendFrom">Descned From Altitude (Feet)</label>
+            <div class="col-sm-1">
+                <Input type="text" id="txtDescendFrom" name="txtDescendFrom" value="@descendFrom" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="col">
+            <label id="labDescendTo">Descend To Altitude (Feet)</label>
+            <div class="col-sm-1">
+                <input type="text" id="txtDescendTo" name="txtDescendTo" value="@descendTo" />
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+    @test
+    <div class="row">
+        <div class="col">
+            <label id="labDescendFrom">Descned From Altitude (Feet)</label>
+            <div class="col-sm-1">
+                <Input type="text" id="txtDescendFrom" name="txtDescendFrom" disabled value="@descendFrom" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="col">
+            <label id="labDescendTo">Descend To Altitude (Feet)</label>
+            <div class="col-sm-1">
+                <input type="text" id="txtDescendTo" name="txtDescendTo" disabled value="@descendTo" />
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+<br />
+<br />
+
+@if (ActionType == "disable1")
+{
+    @test
 
     <div class="row">
-    <div class="col">
-        <label for="descendFrom">Descned From</label>
-        <div class="col-sm-1">
-            <Input type="text" id="descendFrom" value="@descendFrom"/>
+        <div class="col">
+            <label id="descendSpeed">Air Speed (Knots)</label>
+            <div class="col-sm-1">
+                <Input type="text" id="txtDescendSpeed" name="txtDescendSpeed" disabled value="@descendSpeed" />
+            </div>
+
         </div>
-        
-    </div>
 
-    <br />
+        <br />
 
-    <div class="col">
-        <label>Enter Descend To</label>
-        <div class="col-sm-1">
-            <input type="text" id="descnedTo" value="@descendTo" />
+        <div class="col">
+            <label id="descendAngle">Pitch Angle (Degree)</label>
+            <div class="col-sm-1">
+                <input type="text" id="txtPitchangle" name="txtPitchangle" disabled value="@descendAngle" />
+            </div>
+
         </div>
-        
     </div>
-</div>
+}
+else
+{
+    @test
+    <div class="row">
+        <div class="col">
+            <label id="descendSpeed">Air Speed (Knots)</label>
+            <div class="col-sm-1">
+                <Input type="text" id="txtDescendSpeed" name="txtDescendSpeed" value="@descendSpeed" />
+            </div>
 
-<br/>
-<br/>
-
-<div class="row">
-    <div class="col">
-        <label for="descendSpeed">Descned Speed</label>
-        <div class="col-sm-1">
-            <Input type="text" id="descendSpeed" value="@descendSpeed"/>
         </div>
-        
-    </div>
 
-    <br />
+        <br />
 
-    <div class="col">
-        <label for="descendAngle">Descend Angle</label>
-        <div class="col-sm-1">
-            <input type="text" id="descnedTo" value="@descendAngle"/>
+        <div class="col">
+            <label id="descendAngle">Pitch Angle (Degree)</label>
+            <div class="col-sm-1">
+                <input type="text" id="txtPitchangle" name="txtPitchangle" value="@descendAngle" />
+            </div>
+
         </div>
-        
-    </div>
-</div>
+    </div> 
+}
 
-<br/>
-<br/>
 
-<div class="row">
-    <div class="col">
-        <label for="distanceTravled">Descend Travled</label>
-        <div class="col-sm-1">
-            <Input type="text" id="descendSpeed" value="@descendSpeed"/>
+
+<br />
+<br />
+
+@if (ActionType == "disable1")
+{
+    @test
+    <div class="row">
+        <div class="col">
+            <label id="labDistanceToDescendIn">Distance To Descend In (NM)</label>
+            <div class="col-sm-1">
+                <Input type="text" id="txtDistanceDescendIn" name="txtDistanceDescendIn" value="@distanceDescendIn" />
+            </div>
+
         </div>
-       
     </div>
-</div>
+}
+else
+{
+    @test
+    
+    <div class="row">
+        <div class="col">
+            <label id="labDistanceToDescendIn">Distance To Descend In (NM)</label>
+            <div class="col-sm-1">
+                <Input type="text" id="txtDistanceDescendIn" name="txtDistanceDescendIn" disable value="@distanceDescendIn" />
+            </div>
 
+        </div>
+    </div>
+}
+
+
+
+<br />
+<br />
+
+
+<button class="btn btn-primary" @onclick="GetCalculation">Calculate Descend</button>
 
 
 
 @code {
 
-    [Parameter]
-    public string? ActionType { get; set; }
+    // See code behind [DescendComponent.cs]
 
-    private string? descendFrom { get; set; } 
-    private string? descendTo { get; set; }
-    private string? descendSpeed { get; set; }
-    private string? descendAngle { get; set; }
-    private string? descendTravled { get; set; }
-    
 }

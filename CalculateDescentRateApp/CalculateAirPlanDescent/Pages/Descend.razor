@@ -1,4 +1,4 @@
-﻿@page "/Descend/{Pagetitle}"
+﻿@page "/Descend/{Pagetitle}/{ActionType1}"
 @inject HttpClient Http
 
 <PageTitle>Descend Calculator</PageTitle>
@@ -6,7 +6,7 @@
 <h1>@Pagetitle</h1>
 
 <div>
-    <DescendComponent ActionType="@actionType"></DescendComponent>
+    <DescendComponent ActionType="@ActionType1" CalculationType="@Pagetitle"></DescendComponent>
 </div>
 
 
@@ -16,16 +16,14 @@
     public string? Pagetitle { get; set; }
 
     [Parameter]
-    public string ActionType { get; set; }
+    public string? ActionType1 { get; set; }
 
-    private string actionType = "";
 
-    protected override void OnInitialized()
-    {
-        if (Pagetitle == "Calculate Descend Only")
-        {
-            actionType = "CalculateDescendOnly";
-        }
-    }
+    //public string ActionToTake
+    //{
+    //    get { return ActionType1; }
+    //    set { ActionType1 = value; }
+    //}
 
+   
 }
