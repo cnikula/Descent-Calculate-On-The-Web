@@ -1,153 +1,77 @@
-﻿<h7>Please input all required fields</h7>
-
-
-<br />
-<br />
-
-
-@if (ActionType == "disable1")
-{
-    @test
-    <div class="row">
-        <div class="col">
-            <label id="labDescendFrom">Descned From Altitude (Feet)</label>
-            <div class="col-sm-1">
-                <Input type="text" id="txtDescendFrom" name="txtDescendFrom" value="@descendFrom" />
-            </div>
-        </div>
-
-        <br />
-
-        <div class="col">
-            <label id="labDescendTo">Descend To Altitude (Feet)</label>
-            <div class="col-sm-1">
-                <input type="text" id="txtDescendTo" name="txtDescendTo" value="@descendTo" />
-            </div>
-
-        </div>
-    </div>
-}
-else
-{
-    @test
-    <div class="row">
-        <div class="col">
-            <label id="labDescendFrom">Descned From Altitude (Feet)</label>
-            <div class="col-sm-1">
-                <Input type="text" id="txtDescendFrom" name="txtDescendFrom" disabled value="@descendFrom" />
-            </div>
-        </div>
-
-        <br />
-
-        <div class="col">
-            <label id="labDescendTo">Descend To Altitude (Feet)</label>
-            <div class="col-sm-1">
-                <input type="text" id="txtDescendTo" name="txtDescendTo" disabled value="@descendTo" />
-            </div>
-
-        </div>
-    </div>
-}
-
-
+﻿@using CalculateAirPlanDescent.Data.Models
+<h7>Please input all required fields</h7>
 
 <br />
 <br />
 
-@if (ActionType == "disable1")
-{
-    @test
+<EditForm Model="@descendRateModel">
+    <DataAnnotationsValidator />
 
-    <div class="row">
-        <div class="col">
-            <label id="descendSpeed">Air Speed (Knots)</label>
-            <div class="col-sm-1">
-                <Input type="text" id="txtDescendSpeed" name="txtDescendSpeed" disabled value="@descendSpeed" />
+   
+        <div class="row">
+            <div class="col">
+                <label id="labDescendFrom">Descned From Altitude (Feet)</label>
+                <div class="col-sm-1">
+                    <InputText id="txtDescendFrom" name="txtDescendFrom" @bind-Value="descendRateModel.descendFrom" disabled="@Isdisable()" />
+                </div>
             </div>
 
+            <br/>
+
+            <div class="col">
+                <label id="labDescendTo">Descend To Altitude (Feet)</label>
+                <div class="col-sm-1">
+                <InputText id="txtDescendTo" name="txtDescendTo" @bind-Value="descendRateModel.descendTo" disabled="@Isdisable()" />
+                </div>
+
+            </div>
         </div>
+  
+    <br/>
+    <br/>
 
-        <br />
+        <div class="row">
+            <div class="col">
+                <label id="descendSpeed">Air Speed (Knots)</label>
+                <div class="col-sm-1">
+                <InputText id="txtDescendSpeed" name="txtDescendSpeed" @bind-Value="descendRateModel.descendSpeed" disabled="@Isdisable()" />
+                </div>
 
-        <div class="col">
-            <label id="descendAngle">Pitch Angle (Degree)</label>
-            <div class="col-sm-1">
-                <input type="text" id="txtPitchangle" name="txtPitchangle" disabled value="@descendAngle" />
             </div>
 
-        </div>
-    </div>
-}
-else
-{
-    @test
-    <div class="row">
-        <div class="col">
-            <label id="descendSpeed">Air Speed (Knots)</label>
-            <div class="col-sm-1">
-                <Input type="text" id="txtDescendSpeed" name="txtDescendSpeed" value="@descendSpeed" />
+            <br/>
+
+            <div class="col">
+                <label id="descendAngle">Pitch Angle (Degree)</label>
+                <div class="col-sm-1">
+                <InputText id="txtPitchangle" name="txtPitchangle" @bind-Value="descendRateModel.descendAngle" disabled="@Isdisable()" />
+                </div>
+
             </div>
-
         </div>
+   
+    <br/>
+    <br/>
+ 
+        <div class="row">
+            <div class="col">
+                <label id="labDistanceToDescendIn">Distance To Descend In (NM)</label>
+                <div class="col-sm-1">
+                <InputText id="txtDistanceDescendIn" name="txtDistanceDescendIn" @bind-Value="descendRateModel.distanceDescendIn" disabled="@Isdisable()" />
+                </div>
 
-        <br />
-
-        <div class="col">
-            <label id="descendAngle">Pitch Angle (Degree)</label>
-            <div class="col-sm-1">
-                <input type="text" id="txtPitchangle" name="txtPitchangle" value="@descendAngle" />
             </div>
-
         </div>
-    </div> 
-}
+  
+    <br/>
+    <br/>
 
+    <button class="btn btn-primary" @onclick="GetCalculation">Calculate Descend</button>
 
-
-<br />
-<br />
-
-@if (ActionType == "disable1")
-{
-    @test
-    <div class="row">
-        <div class="col">
-            <label id="labDistanceToDescendIn">Distance To Descend In (NM)</label>
-            <div class="col-sm-1">
-                <Input type="text" id="txtDistanceDescendIn" name="txtDistanceDescendIn" value="@distanceDescendIn" />
-            </div>
-
-        </div>
-    </div>
-}
-else
-{
-    @test
-    
-    <div class="row">
-        <div class="col">
-            <label id="labDistanceToDescendIn">Distance To Descend In (NM)</label>
-            <div class="col-sm-1">
-                <Input type="text" id="txtDistanceDescendIn" name="txtDistanceDescendIn" disable value="@distanceDescendIn" />
-            </div>
-
-        </div>
-    </div>
-}
-
-
-
-<br />
-<br />
-
-
-<button class="btn btn-primary" @onclick="GetCalculation">Calculate Descend</button>
+</EditForm>
 
 
 
 @code {
-
     // See code behind [DescendComponent.cs]
-
 }

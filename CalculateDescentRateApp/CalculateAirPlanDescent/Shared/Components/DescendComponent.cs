@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Components;
+using CalculateAirPlanDescent.Data.Models;
 
 namespace CalculateAirPlanDescent.Shared.Components
 {
@@ -9,15 +11,19 @@ namespace CalculateAirPlanDescent.Shared.Components
         [Parameter]
         public string? CalculationType { get; set; }
 
-        // Fields
-        private string? descendFrom { get; set; }
-        private string? descendTo { get; set; }
-        private string? descendSpeed { get; set; }
-        private string? descendAngle { get; set; }
-        private string? distanceDescendIn { get; set; }
-        private string? test { get; set; } = "test";
+        private DescendRateModel descendRateModel = new();
 
-
+        private bool Isdisable()
+        {
+            if (ActionType == "disable1")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void GetCalculation()
         {

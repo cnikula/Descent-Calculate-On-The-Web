@@ -3,27 +3,17 @@
 
 <PageTitle>Descend Calculator</PageTitle>
 
-<h1>@Pagetitle</h1>
+@{
+    PracTitle();
+}
+
+<h1>@fullTital</h1>
 
 <div>
     <DescendComponent ActionType="@ActionType1" CalculationType="@Pagetitle"></DescendComponent>
 </div>
 
 
-
 @code {
-    [Parameter]
-    public string? Pagetitle { get; set; }
-
-    [Parameter]
-    public string? ActionType1 { get; set; }
-
-
-    //public string ActionToTake
-    //{
-    //    get { return ActionType1; }
-    //    set { ActionType1 = value; }
-    //}
-
-   
+   // see Page\Descend.cs
 }
