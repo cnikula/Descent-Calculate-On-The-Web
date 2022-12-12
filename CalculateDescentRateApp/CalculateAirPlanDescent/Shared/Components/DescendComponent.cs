@@ -17,6 +17,18 @@ namespace CalculateAirPlanDescent.Shared.Components
         {
             if (ActionType == "disable1")
             {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool Isdisable2()
+        {
+            if (ActionType == "disable1")
+            {
                 return true;
             }
             else

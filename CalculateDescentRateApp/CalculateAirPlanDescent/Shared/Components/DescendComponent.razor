@@ -6,13 +6,15 @@
 
 <EditForm Model="@descendRateModel">
     <DataAnnotationsValidator />
+    <ValidationSummary />
 
    
         <div class="row">
             <div class="col">
-                <label id="labDescendFrom">Descned From Altitude (Feet)</label>
+            <label id="labDescendFrom">Descned From Altitude (Feet)</label>
                 <div class="col-sm-1">
-                    <InputText id="txtDescendFrom" name="txtDescendFrom" @bind-Value="descendRateModel.descendFrom" disabled="@Isdisable()" />
+                    <InputNumber id="txtDescendFrom" name="txtDescendFrom" @bind-Value="descendRateModel.descendFrom" disabled="@Isdisable()" />
+                    @*<ValidationMessage For="() => descendRateModel.descendFrom"/>*@
                 </div>
             </div>
 
@@ -21,7 +23,7 @@
             <div class="col">
                 <label id="labDescendTo">Descend To Altitude (Feet)</label>
                 <div class="col-sm-1">
-                <InputText id="txtDescendTo" name="txtDescendTo" @bind-Value="descendRateModel.descendTo" disabled="@Isdisable()" />
+                <InputNumber id="txtDescendTo" name="txtDescendTo" @bind-Value="descendRateModel.descendTo" disabled="@Isdisable()" />
                 </div>
 
             </div>
@@ -34,7 +36,7 @@
             <div class="col">
                 <label id="descendSpeed">Air Speed (Knots)</label>
                 <div class="col-sm-1">
-                <InputText id="txtDescendSpeed" name="txtDescendSpeed" @bind-Value="descendRateModel.descendSpeed" disabled="@Isdisable()" />
+                <InputNumber id="txtDescendSpeed" name="txtDescendSpeed" @bind-Value="descendRateModel.descendSpeed" disabled="@Isdisable2()" />
                 </div>
 
             </div>
@@ -44,7 +46,7 @@
             <div class="col">
                 <label id="descendAngle">Pitch Angle (Degree)</label>
                 <div class="col-sm-1">
-                <InputText id="txtPitchangle" name="txtPitchangle" @bind-Value="descendRateModel.descendAngle" disabled="@Isdisable()" />
+                <InputNumber id="txtPitchangle" name="txtPitchangle" @bind-Value="descendRateModel.descendAngle" disabled="@Isdisable2()" />
                 </div>
 
             </div>
@@ -57,7 +59,7 @@
             <div class="col">
                 <label id="labDistanceToDescendIn">Distance To Descend In (NM)</label>
                 <div class="col-sm-1">
-                <InputText id="txtDistanceDescendIn" name="txtDistanceDescendIn" @bind-Value="descendRateModel.distanceDescendIn" disabled="@Isdisable()" />
+                <InputNumber id="txtDistanceDescendIn" name="txtDistanceDescendIn" @bind-Value="descendRateModel.distanceDescendIn" disabled="@Isdisable()" />
                 </div>
 
             </div>
