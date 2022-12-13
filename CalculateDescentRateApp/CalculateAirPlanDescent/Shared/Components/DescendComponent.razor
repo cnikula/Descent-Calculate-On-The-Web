@@ -8,7 +8,6 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-   
         <div class="row">
             <div class="col">
             <label id="labDescendFrom">Descned From Altitude (Feet)</label>
@@ -69,6 +68,20 @@
     <br/>
 
     <button class="btn btn-primary" @onclick="GetCalculation">Calculate Descend</button>
+    
+    <br/>
+    <br/>
+    
+    @if (errorMessage)
+    {
+        <label class="text-danger" id="labResult" name="labResult" hidden="@hide">@rersult</label>
+    }
+    else
+    {
+        <label class="text-primary" id="labResult" name="labResult" hidden="@hide">@rersult</label>
+    }
+    
+
 
 </EditForm>
 
